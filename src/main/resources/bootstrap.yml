@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: travel-management-auth-server
+  cloud:
+    config:
+      fail-fast: true
+      uri: http://localhost:8763
+      username: root
+      password: root
