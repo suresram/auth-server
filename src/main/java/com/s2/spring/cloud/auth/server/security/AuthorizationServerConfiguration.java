@@ -1,6 +1,7 @@
 package com.s2.spring.cloud.auth.server.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,6 +19,12 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
+	@Value("${s2.client.id}")
+	private String clientId;
+
+	@Value("${s2.client.secret}")
+	private String clientSecret;
+	
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
@@ -35,8 +42,8 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		clients.inMemory()
-				.withClient("s2-client")
-				.secret(passwordEncoder.encode("secret"))
+				.withClient(clientId)
+				.secret(passwordEncoder.encode(clientSecret))
 				.authorizedGrantTypes("password", "client_credentials", "refresh_token")
 				.scopes("all")
 				.accessTokenValiditySeconds(3600)
