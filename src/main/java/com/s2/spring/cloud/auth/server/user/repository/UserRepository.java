@@ -8,6 +8,6 @@ import com.s2.spring.cloud.auth.server.user.model.User;
 
 public interface UserRepository extends MongoRepository<User, String> {
 
-	User findByUsername(String username);
+	User findByUserId(String userId);
 
 }

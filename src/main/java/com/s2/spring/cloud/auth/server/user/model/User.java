@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
 	@Id
 	private String id;
-	private String username;
+	private String userId;
 	private String password;
 	private List<String> roles;
 
@@ -17,8 +17,8 @@ public class User {
 
 	}
 
-	public User(String username, String password, List<String> roles) {
-		this.username = username;
+	public User(String userId, String password, List<String> roles) {
+		this.userId = userId;
 		this.password = password;
 		this.roles = roles;
 	}
@@ -39,12 +39,12 @@ public class User {
 		this.password = password;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public List<String> getRoles() {
@@ -57,7 +57,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", roles="
+		return "User [id=" + id + ", userId=" + userId + ", password=" + password + ", roles="
 				+ roles + "]";
 	}
 
