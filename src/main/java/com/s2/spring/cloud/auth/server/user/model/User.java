@@ -13,16 +13,6 @@ public class User {
 	private String password;
 	private List<String> roles;
 
-	public User() {
-
-	}
-
-	public User(String userId, String password, List<String> roles) {
-		this.userId = userId;
-		this.password = password;
-		this.roles = roles;
-	}
-
 	public String getId() {
 		return id;
 	}
@@ -53,12 +43,6 @@ public class User {
 
 	public void setRoles(List<String> roles) {
 		this.roles = roles;
-	}
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", userId=" + userId + ", password=" + password + ", roles="
-				+ roles + "]";
 	}
 
 }

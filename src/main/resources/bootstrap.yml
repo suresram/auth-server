@@ -7,3 +7,11 @@ spring:
       uri: http://localhost:8763
       username: root
       password: root
+---
+spring:
+  profiles: test
+  cloud:
+    config:
+     enabled: false
+    discovery:
+      enabled: false

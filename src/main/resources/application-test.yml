@@ -1,0 +1,4 @@
+s2:
+  client:
+    id: s2-client
+    secret: secret
