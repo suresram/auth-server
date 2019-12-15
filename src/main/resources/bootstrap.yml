@@ -1,6 +1,6 @@
 spring:
   application:
-    name: travel-management-auth-server
+    name: auth-server
   cloud:
     config:
       fail-fast: true
