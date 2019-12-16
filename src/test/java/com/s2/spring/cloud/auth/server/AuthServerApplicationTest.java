@@ -20,6 +20,7 @@ import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.boot.json.JacksonJsonParser;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.security.web.FilterChainProxy;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -50,6 +51,9 @@ public class AuthServerApplicationTest {
 	@MockBean
 	private UserRepository userRepository;
 
+	@MockBean
+	private MongoOperations mongoOperations;
+	
 	@Autowired
 	private FilterChainProxy springSecurityFilterChain;
 

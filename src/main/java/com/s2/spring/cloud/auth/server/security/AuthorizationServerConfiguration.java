@@ -12,7 +12,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
+
+import com.s2.spring.cloud.auth.server.tokenstore.MongoTokenStore;
 
 @Configuration
 @EnableAuthorizationServer
@@ -58,7 +59,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
 	@Bean
 	public TokenStore tokenStore() {
-		return new InMemoryTokenStore();
+		 return new MongoTokenStore();
 	}
 	
 }
